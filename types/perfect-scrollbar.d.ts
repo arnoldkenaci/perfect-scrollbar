@@ -1,22 +1,20 @@
-declare namespace PerfectScrollbar {
-  export interface Options {
-    handlers?: string[];
-    maxScrollbarLength?: number;
-    minScrollbarLength?: number;
-    scrollingThreshold?: number;
-    scrollXMarginOffset?: number;
-    scrollYMarginOffset?: number;
-    suppressScrollX?: boolean;
-    suppressScrollY?: boolean;
-    swipeEasing?: boolean;
-    useBothWheelAxes?: boolean;
-    wheelPropagation?: boolean;
-    wheelSpeed?: number;
-  }
+declare interface Options {
+  handlers?: string[];
+  maxScrollbarLength?: number;
+  minScrollbarLength?: number;
+  scrollingThreshold?: number;
+  scrollXMarginOffset?: number;
+  scrollYMarginOffset?: number;
+  suppressScrollX?: boolean;
+  suppressScrollY?: boolean;
+  swipeEasing?: boolean;
+  useBothWheelAxes?: boolean;
+  wheelPropagation?: boolean;
+  wheelSpeed?: number;
 }
 
 declare class PerfectScrollbar {
-  constructor(element: string | Element, options?: PerfectScrollbar.Options);
+  constructor(element: string | Element, options?: Options);
 
   update(): void;
   destroy(): void;
@@ -55,8 +53,8 @@ declare class PerfectScrollbar {
   scrollbarYRail: HTMLElement;
   scrollbarYRight: number;
   scrollbarYTop: number;
-  settings: PerfectScrollbar.Options;
-  reach: { x: 'start' | 'end' | null, y: 'start' | 'end' | null };
+  settings: Options;
+  reach: { x: 'start' | 'end' | null; y: 'start' | 'end' | null };
 }
 
 export default PerfectScrollbar;
